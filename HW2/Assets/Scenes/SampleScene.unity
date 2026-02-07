@@ -991,37 +991,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!1 &1413817573
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1413817574}
-  m_Layer: 0
-  m_Name: OutsideViewPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1413817574
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1413817573}
-  serializedVersion: 2
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 8, y: 1, z: 15}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!1 &1416202557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1723,7 +1692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c7afa93760bfa4ca119248970781cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BreakOutToggleVR
-  outsideView: {fileID: 1413817574}
+  outsideView: {fileID: 0}
   xrCamera: {fileID: 1965748876}
   controllerNode: 5
 --- !u!1660057539 &9223372036854775807
@@ -1743,5 +1712,4 @@ SceneRoots:
   - {fileID: 278882741}
   - {fileID: 1907168170}
   - {fileID: 587033919}
-  - {fileID: 1413817574}
   - {fileID: 700265742}
