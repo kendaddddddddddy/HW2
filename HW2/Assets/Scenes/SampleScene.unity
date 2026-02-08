@@ -720,7 +720,7 @@ MonoBehaviour:
   grabThreshold: 0.5
   useLegacyInputManager: 0
   gripInputName: XRI_Right_Grip
-  useDoubleRotation: 1
+  useDoubleRotation: 0
 --- !u!1 &659022802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1825,7 +1825,7 @@ MonoBehaviour:
   grabThreshold: 0.5
   useLegacyInputManager: 0
   gripInputName: XRI_Left_Grip
-  useDoubleRotation: 1
+  useDoubleRotation: 0
 --- !u!1 &1907168167
 GameObject:
   m_ObjectHideFlags: 0
