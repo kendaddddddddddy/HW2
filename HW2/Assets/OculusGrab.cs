@@ -116,33 +116,36 @@ public class OculusGrab : MonoBehaviour
         if (rb != null && HoldCounts[grabbedObject] == 1)
         {
             rb.useGravity = false;
-            // 不要 isKinematic=true（你原注释是对的）
+            rb.isKinematic=true;
+            rb.linearVelocity = Vector3.zero; 
+            rb.angularVelocity = Vector3.zero;
         }
     }
 
-    void Release()
+void Release()
     {
         if (grabbedObject == null) return;
 
-        // 计数 - 恢复重力（只有最后一只手松开才恢复）
         if (HoldCounts.ContainsKey(grabbedObject))
         {
             HoldCounts[grabbedObject]--;
+            // 只有当所有手都松开时
             if (HoldCounts[grabbedObject] <= 0)
             {
                 HoldCounts.Remove(grabbedObject);
 
                 Rigidbody rb = grabbedObject.GetComponent<Rigidbody>();
                 if (rb != null) 
-{
-    // 1. 确保重力是关闭的
-    rb.useGravity = false; 
-    
-    // 2. 关键一步：把速度清零！
-    // 如果不写这两句，物体虽然不掉下去，但会保留你松手时的速度，一直飘走
-    rb.linearVelocity = Vector3.zero;        // 停止移动
-    rb.angularVelocity = Vector3.zero; // 停止旋转
-}
+                {
+                    // 【关键修改】松手了，还原物理状态
+                    rb.isKinematic = false; 
+
+                    rb.useGravity = false; // 你的需求是松手悬空，所以 Gravity false
+                    
+                    // Unity 6 以前的版本请用 rb.velocity
+                    rb.linearVelocity = Vector3.zero;        
+                    rb.angularVelocity = Vector3.zero; 
+                }
             }
         }
 
